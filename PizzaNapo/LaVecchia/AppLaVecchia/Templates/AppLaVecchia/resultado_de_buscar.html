@@ -1,0 +1,27 @@
+{% extends 'AppLaVecchia/base.html' %}
+
+{% block title %} Resultados de Búsqueda {% endblock title %}
+
+{% block main %}
+    <h2>Resultados de búsqueda</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Menu</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for menu in menus %}
+            <tr>
+                <td>{{ menu.nombre }}</td>
+                <td>{{ menu.precio }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="2">No se encontraron resultados</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock main %}

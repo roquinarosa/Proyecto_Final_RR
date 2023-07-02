@@ -1,0 +1,24 @@
+{% extends 'AppLaVecchia/base.html' %}
+
+{% load static %}
+
+{% block title %} Inicio {% endblock title %}
+
+{% block main %}
+    <!-- Content section 1-->
+    <section id="scroll">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5"><img class="img-fluid rounded-circle" src="{% static 'AppLaVecchia/assets/img/01.jpg' %}" alt="..." /></div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-5">
+                        <h2 class="display-4">Empleados</h2>
+                        <p>Datos de los empleados</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock main %}

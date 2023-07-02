@@ -1,0 +1,15 @@
+{% extends 'AppLaVecchia/base.html' %}
+
+{% load static %}
+
+{% block title %} Inicio {% endblock title %}
+
+{% block main %}
+
+
+{% for menu in menu %}
+    <li>{{ menu }}</li><a href="{% url 'Delete' menu.id %}">Borrar</a>
+{% endfor %}
+
+
+{% endblock main %}

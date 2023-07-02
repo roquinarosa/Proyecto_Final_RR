@@ -1,0 +1,32 @@
+{% extends 'AppLaVecchia/base.html' %}
+
+{% load static %}
+
+{% block title %} Inicio {% endblock title %}
+
+{% block main %}
+  
+    <form action="" method="GET">
+        {% csrf_token %}
+        <input type="text" name="busqueda" id="menu">
+        <input type="submit" value="Buscar">
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Menu</th>
+                <th>Precio</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for menu in menus %}
+            <tr>
+                <td>{{ menu.nombre }}</td>
+                <td>{{ menu.precio }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock main %}
