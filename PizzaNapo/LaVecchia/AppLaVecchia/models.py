@@ -16,6 +16,10 @@ class Clientes (models.Model):
     nombre_completo = models.CharField(max_length=60)
     telefono =models.CharField(max_length=15)
     email = models.EmailField()
+
+    def __str__(self):
+        return f"Nombre Completo: {self.nombre_completo} - Telefono {self.telefono} - E-Mail {self.email}"
+
     
 class Empleados (models.Model):
     nombre_completo = models.CharField(max_length=60)

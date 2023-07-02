@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Menu
-from AppLaVecchia.forms import MenuFormulario, BuscaMenuForm
+from AppLaVecchia.forms import MenuFormulario
 
 
 # Create your views here.
@@ -9,7 +9,11 @@ def inicio(request):
     return render(request, "AppLaVecchia/index.html")
 
 def menu(request):
-    return render(request, "AppLaVecchia/menu.html")
+
+    menus = Menu.objects.all()  # Obtén la lista de menús desde la base de datos
+    context = {'menus': menus}
+    return render(request, 'AppLaVecchia/menu.html', context)
+  
 
 def proveedores(request):
     return render(request, "AppLaVecchia/proveedores.html")
@@ -48,15 +52,15 @@ def buscar_menu_formulario(request):
 
     if request.method == "GET":
        
-        busqueda = request.GET.get('busqueda', '')   
-        menus = Menu.objects.filter(nombre__icontains=busqueda)
+        busqueda = request.GET.get('miFormulario', '')  
+        menus = Menu.objects.filter(nombre__icontains=busqueda) 
         context = {'menus': menus}
         return render(request, 'AppLaVecchia/buscar_menu_formulario.html', context)
     
 
 def mostrar_menu(request):
 
-    menu = Menu.objects.all() #trae todos los menu
+    menu = Menu.objects.all() 
 
     contexto= {"menu":menu} 
 
@@ -67,10 +71,20 @@ def menu_2(request, id):
     menu = Menu.objects.get(id=id)
     menu.delete()
  
-    # vuelvo al menú
-    menu = Menu.objects.all()  # trae todos los profesores
+   
+    menu = Menu.objects.all()  
  
     contexto = {"menu": menu}
  
     return render(request, "AppLaVecchia/mostrar_menu.html", contexto)
+
+
+
+
+
+
+
+
+
+
 

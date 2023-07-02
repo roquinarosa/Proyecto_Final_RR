@@ -15,7 +15,12 @@
                 <div class="col-lg-6 order-lg-1">
                     <div class="p-5">
                         <h2 class="display-4">Menu</h2>
-                        <p></p>
+                        <ul>
+                            {% for menu in menus %}
+                                <li>{{ menu }}</li>
+                            {% endfor %}
+                        </ul>
+                      
                     </div>
                 </div>
             </div>
