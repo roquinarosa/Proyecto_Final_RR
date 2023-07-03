@@ -1,6 +1,7 @@
 from django.urls import path 
 from AppLaVecchia import views
 from AppLaVecchia import class_views
+from django.shortcuts import render
 
 urlpatterns = [
     path('',views.inicio, name="Inicio"),
@@ -12,7 +13,7 @@ urlpatterns = [
     path('busca-menu-formulario/', views.buscar_menu_formulario, name="Buscar_Menu"),
     path('mostrar-menu/', views.mostrar_menu, name="Mostrar_Menu"),
     path('confirmar-borrado-menu/<id>/', views.menu_2, name="Borrar Menu"),
-    path('about/', views.about_me, name="about"),
+    path('about/', lambda request: render(request, "AppLaVecchia/about.html"), name='about'),
    
 
 ]

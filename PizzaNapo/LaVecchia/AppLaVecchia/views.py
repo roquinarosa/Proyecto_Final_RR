@@ -79,8 +79,7 @@ def menu_2(request, id):
     return render(request, "AppLaVecchia/mostrar_menu.html", contexto)
 
 
-def about_me(request):
-    return render(request, "AppLaVecchia/about.html")
+
 
 
 
