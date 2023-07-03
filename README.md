@@ -12,8 +12,8 @@ Los usuarios pueden realizar las siguientes accciones:
 
 Consultar el Menu. 
 Acceder al panel Acerca de nosotros. 
-Editar el perfil de Usuario 
-Cambiar la contraseña de Usuario 
-Cerrar Sesión 
-Login en caso de haber cerrado sesión
+Crear usuario.
+Cambiar la contraseña de Usuario.
+Cerrar Sesión- 
+Login en caso de haber cerrado sesión.
 
