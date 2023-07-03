@@ -1,0 +1,18 @@
+{% extends 'AppLaVecchia/base.html' %}
+
+{% load static %}
+
+{% block title %} Login {% endblock title %}
+
+{% block main %}
+   
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        {{ miFormulario.as_p }}
+        {{ AvatarForm.as_p }}
+        <a href="{% url 'CambiarPass' %}"> Cambiar contraseña</a><br>
+        <input type="submit" value="Enviar">
+
+    </form>
+{% endblock main %}

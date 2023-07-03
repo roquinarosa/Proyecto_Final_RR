@@ -1,0 +1,16 @@
+{% extends 'AppLaVecchia/base.html' %}
+
+{% load static %}
+
+{% block title %} Login {% endblock title %}
+
+{% block main %}
+    
+    <form action="" method="POST">
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+        <input type="submit" value="Registrarse">
+
+    </form>
+{% endblock main %}

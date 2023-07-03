@@ -33,6 +33,12 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'Clientes' %}">Clientes</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Proveedores' %}">Proveedores</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Empleados' %}">Empleados</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Acerca de Nosotros</a></li>
+                        {% if not request.user.is_authenticated %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Login' %}">Iniciar sesion</a></li>
+                        {% endif %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Register' %}">Crear cuenta</a></li>
+
 
                         
                         <div class="dropdown">

@@ -10,7 +10,7 @@ def inicio(request):
 
 def menu(request):
 
-    menus = Menu.objects.all()  # Obtén la lista de menús desde la base de datos
+    menus = Menu.objects.all()  
     context = {'menus': menus}
     return render(request, 'AppLaVecchia/menu.html', context)
   
@@ -77,6 +77,10 @@ def menu_2(request, id):
     contexto = {"menu": menu}
  
     return render(request, "AppLaVecchia/mostrar_menu.html", contexto)
+
+
+def about_me(request):
+    return render(request, "AppLaVecchia/about.html")
 
 
 

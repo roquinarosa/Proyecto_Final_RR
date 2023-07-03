@@ -12,8 +12,8 @@ urlpatterns = [
     path('busca-menu-formulario/', views.buscar_menu_formulario, name="Buscar_Menu"),
     path('mostrar-menu/', views.mostrar_menu, name="Mostrar_Menu"),
     path('confirmar-borrado-menu/<id>/', views.menu_2, name="Borrar Menu"),
+    path('about/', views.about_me, name="about"),
    
-
 
 ]
 
